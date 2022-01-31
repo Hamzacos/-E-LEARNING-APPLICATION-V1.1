@@ -1,0 +1,43 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+.adm{
+    font-weight: 900;
+    font-size: 15px;
+}
+.fond{
+  background-color: #FAFFC1;
+}
+span{
+    font-weight: 500;
+    font-size: 14px;
+}
+.sheet :visited{
+    background-color: aqua;
+}
+.itoub{
+    position: relative;
+}
+.fa-search{
+position: absolute ;
+right: 15px;
+}
+.ok{
+    border-radius: 10px;
+}
+.card1{
+    background-color: #F0F9FF;
+    border-radius: 8px;
+}
+.card2{
+    background-color: #FEF6FB;
+    border-radius: 8px;
+}
+.card3{
+    background-color: #FEFBEC;
+    border-radius: 8px;
+}
+.card4{
+    background:linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
+    border-radius: 8px;
+}

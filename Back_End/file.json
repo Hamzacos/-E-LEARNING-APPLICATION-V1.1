@@ -1,0 +1,34 @@
+[
+        {
+            "img"    : "img/student.jpg",
+            "name"   : "username",
+            "email"  : "user@email.com",
+            "phone"  : "7305477760",
+            "number" : "1234567305477760",
+            "date"   : "08-Dec, 2021"
+        },
+        {
+            "img"    : "img/student.jpg",
+            "name"   : "hamza",
+            "email"  : "hamza.laqraa@email.com",
+            "phone"  : "06123456789",
+            "number" : "1234567305477760",
+            "date"   : "08-Dec, 2021"
+        },
+        {
+            "img"    : "img/student.jpg",
+            "name"   : "hamid",
+            "email"  : "hamid@email.com",
+            "phone"  : "064838382828",
+            "number" : "1234567305477760",
+            "date"   : "08-Dec, 2021"
+        },
+        {
+            "img"    : "img/student.jpg",
+            "name"   : "salim",
+            "email"  : "salim@email.com",
+            "phone"  : "05493939229",
+            "number" : "1234567305477760",
+            "date"   : "08-Dec, 2021"
+        }     
+]
