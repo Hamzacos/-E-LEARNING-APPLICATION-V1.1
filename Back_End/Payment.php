@@ -1,3 +1,41 @@
+<?php
+$user = [
+[
+    'name' => 'Karthi',
+    'payment' => 'First',
+    'bill' => '00012223',
+    'amount' => 'DHS 100,000',
+    'balance' => '	DHS 500,000',
+    'date' => '05-Jan, 2022',
+],
+[
+    'name' => 'hamza',
+    'payment' => 'second',
+    'bill' => '03412223',
+    'amount' => 'DHS 100,000',
+    'balance' => 'DHS 500,000',
+    'date' => '05-Jan, 2022',
+],
+[
+    'name' => 'salim',
+    'payment' => 'first',
+    'bill' => '06712223',
+    'amount' => 'DHS 100,000',
+    'balance' => 'DHS 500,000',
+    'date' => '05-Jan, 2022',
+],
+[
+    'name' => 'hamid',
+    'payment' => 'first',
+    'bill' => '09812223',
+    'amount' => 'DHS 100,000',
+    'balance' => 'DHS 500,000',
+    'date' => '05-Jan, 2022',
+],
+];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <?php
@@ -32,22 +70,18 @@
                                         </thead> 
                                               <tbody>
                                                                       <?php
-                                                                       
-                                                                             $fichier = 'payment.json';
-                                                                             $db = file_get_contents($fichier);
-                                                                             $user = json_decode($db,true);
-                                                                            foreach($user as $key)
-                                                                            {
-                                                                                echo "<tr>
-                                                                                <th scope='row' >{$key['name']}</th>
-                                                                                <td>{$key['payment']}</td>
-                                                                                <td>{$key['bill']}</td>
-                                                                                <td>{$key['amount']}</td>
-                                                                                <td>{$key['balance']}</td>
-                                                                                <td>{$key['date']}</td>
-                                                                                <td><i class='fal fa-eye text-info'></i></td>
-                                                                                </tr>";
-                                                                            }
+                                                                      foreach($user as $key)
+                                                                      {
+                                                                          echo "<tr>
+                                                                          <th scope='row' >{$key['name']}</th>
+                                                                          <td>{$key['payment']}</td>
+                                                                          <td>{$key['bill']}</td>
+                                                                          <td>{$key['amount']}</td>
+                                                                          <td>{$key['balance']}</td>
+                                                                          <td>{$key['date']}</td>
+                                                                          <td><i class='fal fa-eye text-info'></i></td>
+                                                                          </tr>";
+                                                                      }
                                                                       ?>
                         
                                                </tbody>
