@@ -61,7 +61,7 @@
                    <label for="email">Entrez la Date d'admission</label>
                    <input type="date" class="form-control"  placeholder="123XXXXXXXXXX" name="Date_of_admission">
                  </div>
-                 <p><input type="submit" name="insert" value="Insérer"></p>
+                 <p><input type="submit" name="insert" value="Insérer" class="bg-info"></p>
                  
                </fieldset>
              </form>

@@ -20,14 +20,14 @@ $course = $query->fetchAll(PDO::FETCH_ASSOC);
                     <?php include 'navbar.php'; ?>
                     <h5 class="fw-bolder d-none d-sm-block mx-3">Courses List</h5>
               <div class="d-flex align-items-center">
-              <button type="button" class="btn  bg-info text-white my-3" onclick="window.location.href = 'ajouter.php';">ADD NEW COURSE</button>
+              <button type="button" class="btn  bg-info text-white my-3" onclick="window.location.href = 'addCourse.php';">ADD NEW COURSE</button>
               </div>
-                    <table class="table table-striped">
+                    <table class="table table-striped ">
                     <thead>
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col"></th>
                             <th scope="col">Name</th>
+                            <th scope="col">Description</th>
                             <th scope="col">lien</th>
                             </tr>
                         </thead>
@@ -35,12 +35,11 @@ $course = $query->fetchAll(PDO::FETCH_ASSOC);
                         <?php 
                             foreach($course as $key => $val):?>
                             <tr>
-                            <th scope="row"><?php  echo $val['id'] ?></th>
-                            <td><img src=" <?php  echo $val['image']?>" alt="Crouse" width="65px" /></td>
+                            <th scope="row"><img src=" <?php  echo $val['image']?>" alt="Crouse" width="65px" /></th>
                             <td><?php  echo $val['nom'] ?></td>
                             <td><?php  echo $val['lien'] ?></td>
-                            <td><a href="modifier.php?id=<?php echo $val['id'] ; ?>"><i class="fal fa-pen text-info"></a></i>
-                                <a href = "suprimer.php?id=<?= $val['id'] ?>"><i class="fal fa-trash text-info mx-1"></a></i></td>
+                            <td><a href ="editC.php?id=<?php echo $val['id'] ; ?>"><i class="fal fa-pen text-info"></a></i>
+                                <a href = "deletC.php?id=<?= $val['id'] ?>"><i class="fal fa-trash text-info mx-1"></a></i></td>
                             </tr>
                             <?php endforeach;; ?>
                         </tbody>
