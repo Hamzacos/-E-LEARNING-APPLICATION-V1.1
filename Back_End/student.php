@@ -1,60 +1,23 @@
 <?php
-$students = [
-    [
-        'img' => 'img/student.jpg',
-        'name' => 'username',
-        'email' => 'user@email.com',
-        'phone' => '7305477760',
-        'number' => '1234567305477760',
-        'date' => '08-Dec, 2021',
-        
 
-    ],
-    [
-      'name' => 'hamza',
-      'email' => 'hamza.laqraa@hotmail.com',
-      'phone' => '0630202850',
-      'number' => '1234567305477760',
-      'date' => '08-Dec, 202',
-      'img' => 'img/student.jpg',
-  ],
-  [
-    'name' => 'saida',
-    'email' => 'saida.barakat@hotmail.com',
-    'phone' => '0630202850',
-    'number' => '1234567305477760',
-    'date' => '08-Dec, 202',
-    'img' => 'img/student.jpg',
-],
-[
-  'name' => 'salim',
-  'email' => 'salim.ahmad@hotmail.com',
-  'phone' => '0630202850',
-  'number' => '1234567305477760',
-  'date' => '08-Dec, 202',
-  'img' => 'img/student.jpg',
-],
-[
-  'name' => 'maher',
-  'email' => 'maher.nourdin@hotmail.com',
-  'phone' => '0630202850',
-  'number' => '1234567305477760',
-  'date' => '08-Dec, 202',
-  'img' => 'img/student.jpg',
-],
-[
-  'name' => 'salim',
-  'email' => 'salim.ahmad@hotmail.com',
-  'phone' => '0630202850',
-  'number' => '1234567305477760',
-  'date' => '08-Dec, 202',
-  'img' => 'img/student.jpg',
-],
+// On inclut la connexion à la base
+require_once('connection.php');
 
-    
-];
+// On écrit notre requête
+$sql = 'SELECT * FROM `students`';
+
+// On prépare la requête
+$query = $conn->prepare($sql);
+
+// On exécute la requête
+$query->execute();
+
+// On stocke le résultat dans un tableau associatif
+$students = $query->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -74,7 +37,7 @@ $students = [
               <h5 class="fw-bolder d-none d-sm-block mx-3">Students List</h5>
               <div class="d-flex align-items-center">
               <i class="far fa-sort text-info far fs-6 fa-sort me-3  d-sm-block"></i>
-              <button type="button" class="btn  bg-info text-white my-3">ADD NEW STUDENT</button>
+              <button type="button" class="btn  bg-info text-white my-3" onclick="window.location.href = 'ajouter.php';">ADD NEW STUDENT</button>
             </div>
             </div>
             <hr>
@@ -94,21 +57,20 @@ $students = [
                 </thead>
                 <tbody>
                   <?php 
-                  foreach($students as $key)
-                  {
-                    echo "<tr class = 'bg-white'>
-                    <th scope='row' class='salut'><img src='{$key['img']}' alt='students' width='65px' 
-                    /></th>
-                  <td>{$key['name']}</td>
-                  <td>{$key['email']}</td>
-                  <td>{$key['phone']}</td>
-                  <td>{$key['number']}</td>
-                  <td>{$key['date']}</td>
-                  <td><i class='fal fa-pen text-info'></i><i class='fal fa-trash text-info mx-1'></i></td>
-                    </tr> <th>";
-                   
-                  }
-                  ?>
+                  foreach($students as $key => $val):?>
+                    <tr class = "bg-white">
+                    <th scope="row" class="salut"><img src=" <?php  echo $val['img']?>" alt="students" width="65px" /> </th>
+                    
+                  <td><?php  echo $val['Name'] ?></td>
+                  <td><?php  echo $val['Email'] ?></td>
+                  <td><?php  echo $val['phone'] ?></td>
+                  <td><?php  echo $val['Enroll_Number'] ?></td>
+                  <td><?php  echo $val['Date_of_admission'] ?></td>
+                  <td><a href="modifier.php?id=<?php echo $val['id'] ; ?>"><i class="fal fa-pen text-info"></a></i>
+                  <a href = "suprimer.php?id=<?= $val['id'] ?>"><i class="fal fa-trash text-info mx-1"></a></i></td>
+                    </tr><th>
+                    
+                    <?php endforeach;; ?>
                 </tbody>
               </table>
               </div>

@@ -1,38 +1,9 @@
 <?php
-$user = [
-[
-    'name' => 'Karthi',
-    'payment' => 'First',
-    'bill' => '00012223',
-    'amount' => 'DHS 100,000',
-    'balance' => '	DHS 500,000',
-    'date' => '05-Jan, 2022',
-],
-[
-    'name' => 'hamza',
-    'payment' => 'second',
-    'bill' => '03412223',
-    'amount' => 'DHS 100,000',
-    'balance' => 'DHS 500,000',
-    'date' => '05-Jan, 2022',
-],
-[
-    'name' => 'salim',
-    'payment' => 'first',
-    'bill' => '06712223',
-    'amount' => 'DHS 100,000',
-    'balance' => 'DHS 500,000',
-    'date' => '05-Jan, 2022',
-],
-[
-    'name' => 'hamid',
-    'payment' => 'first',
-    'bill' => '09812223',
-    'amount' => 'DHS 100,000',
-    'balance' => 'DHS 500,000',
-    'date' => '05-Jan, 2022',
-],
-];
+require_once('connection.php');
+$data = 'SELECT * FROM `payment_details.`';
+$query = $conn->prepare($data);
+$query->execute();
+$user = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -70,19 +41,19 @@ $user = [
                                         </thead> 
                                               <tbody>
                                                                       <?php
-                                                                      foreach($user as $key)
-                                                                      {
-                                                                          echo "<tr>
-                                                                          <th scope='row' >{$key['name']}</th>
-                                                                          <td>{$key['payment']}</td>
-                                                                          <td>{$key['bill']}</td>
-                                                                          <td>{$key['amount']}</td>
-                                                                          <td>{$key['balance']}</td>
-                                                                          <td>{$key['date']}</td>
+                                                                      foreach($user as $key =>$py):?>
+                                                                      
+                                                                          <tr>
+                                                                          <th scope='row' ><?php  echo $py['Name']?></th>
+                                                                          <td><?php  echo $py['payment']?></td>
+                                                                          <td><?php  echo $py['bill']?></td>
+                                                                          <td><?php  echo $py['amount']?></td>
+                                                                          <td><?php  echo $py['balance']?></td>
+                                                                          <td><?php  echo $py['date']?></td>
                                                                           <td><i class='fal fa-eye text-info'></i></td>
-                                                                          </tr>";
-                                                                      }
-                                                                      ?>
+                                                                          </tr>;
+                                                                      
+                                                                          <?php endforeach;; ?> 
                         
                                                </tbody>
                                        </table>
