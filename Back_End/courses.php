@@ -25,9 +25,8 @@ $course = $query->fetchAll(PDO::FETCH_ASSOC);
                     <table class="table table-striped ">
                     <thead>
                             <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"></th>
                             <th scope="col">Name</th>
-                            <th scope="col">Description</th>
                             <th scope="col">lien</th>
                             </tr>
                         </thead>

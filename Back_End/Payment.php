@@ -50,7 +50,8 @@ $user = $query->fetchAll(PDO::FETCH_ASSOC);
                                                                           <td><?php  echo $py['amount']?></td>
                                                                           <td><?php  echo $py['balance']?></td>
                                                                           <td><?php  echo $py['date']?></td>
-                                                                          <td><i class='fal fa-eye text-info'></i></td>
+                                                                          <td><a href="afficherPayment.php?id=<?= $py['id'] ?>">
+                                                                          <i class='fal fa-eye text-info'></a></i></td>
                                                                           </tr>;
                                                                       
                                                                           <?php endforeach;; ?> 

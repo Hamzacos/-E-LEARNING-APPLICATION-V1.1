@@ -1,25 +1,10 @@
 <?php
-
-// On inclut la connexion à la base
 require_once('connection.php');
-
-// On écrit notre requête
 $sql = 'SELECT * FROM `students`';
-
-// On prépare la requête
 $query = $conn->prepare($sql);
-
-// On exécute la requête
 $query->execute();
-
-// On stocke le résultat dans un tableau associatif
 $students = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
