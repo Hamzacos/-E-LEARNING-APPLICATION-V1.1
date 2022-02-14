@@ -44,7 +44,8 @@ $students = $query->fetchAll(PDO::FETCH_ASSOC);
                   <?php 
                   foreach($students as $key => $val):?>
                     <tr class = "bg-white">
-                    <th scope="row" class="salut"><img src=" <?php  echo $val['img']?>" alt="students" width="65px" /> </th>
+                    <th scope="row" class="salut"><img src="./img/<?php  echo $val['img']?>" alt="students" width="65px" /> </th>
+                    
                     
                   <td><?php  echo $val['Name'] ?></td>
                   <td><?php  echo $val['Email'] ?></td>

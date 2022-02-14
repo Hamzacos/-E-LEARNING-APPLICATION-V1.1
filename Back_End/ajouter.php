@@ -1,18 +1,25 @@
 <?php
  require_once ('connection.php');
  if(isset($_POST['insert'])){
- $img = $_POST['img'];
+   print_r($_FILES['img']);
+ $img = $_FILES['img']['name'];
+
+ if(!file_exists('./img/'))
+ {
+   mkdir('./img');
+ }
+  move_uploaded_file($_FILES['img']["tmp_name"], "./img/".$_FILES['img']['name']);
+ 
  $Name= $_POST['Name'];
  $Email= $_POST['Email'];
  $phone= $_POST['phone'];
  $Enroll_Number= $_POST['Enroll_Number'];
  $Date_of_admission= $_POST['Date_of_admission'];
- // Requête mysql pour insérer des données
  $sql = "INSERT INTO `students`(`img`, `Name`, `Email`,`phone`, `Enroll_Number`,`Date_of_admission`) 
         VALUES (:img, :Name, :Email, :phone, :Enroll_Number, :Date_of_admission)";
  $res = $conn->prepare($sql);
  $exec = $res->execute(array(":img"=>$img,":Name"=>$Name,":Email"=>$Email,":phone"=>$phone,":Enroll_Number"=>$Enroll_Number,":Date_of_admission"=>$Date_of_admission));
- // vérifier si la requête d'insertion a réussi
+ 
  if($exec){
    echo 'Données insérées';
  }else{
@@ -34,7 +41,7 @@
         <div class="col overflow-auto">
              <?php include 'navbar.php'; ?>
              <h1>Formulaires</h1>
-             <form method="POST" action="">
+             <form method="POST" enctype="multipart/form-data" action="">
                <fieldset> 
                 <div class="form-group">
                    <label for="nom">Entrez votre nom</label>
