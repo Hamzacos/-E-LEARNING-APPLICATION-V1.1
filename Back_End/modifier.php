@@ -1,12 +1,9 @@
-
 <?php
 require_once("connection.php");
-
     if(!empty($_POST["insert"])) 
         {
                 $pdo_statement=$conn->prepare ("UPDATE `students` SET img='" . $_POST[ 'img' ] .  "', Name='" . $_POST[ 'Name' ]. "', Email='" . $_POST[ 'Email' ]. "', phone='" . $_POST['phone'] ."' 
                 ,Enroll_Number='" . $_POST['Enroll_Number'] ."', Date_of_admission='" . $_POST['Date_of_admission']."' where id=" . $_GET["id"]);
-       
 
             
             $students = $pdo_statement->execute();

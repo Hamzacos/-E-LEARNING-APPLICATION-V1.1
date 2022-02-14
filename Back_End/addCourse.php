@@ -1,16 +1,20 @@
 <?php
  require_once ('connection.php');
  if(isset($_POST['insert'])){
- //$id = $_POST['id'];
- $image= $_POST['image'];
+  print_r($_FILES['image']);
+  $image = $_FILES['image']['name'];
+ 
+  if(!file_exists('./img/'))
+  {
+    mkdir('./img');
+  }
+   move_uploaded_file($_FILES['image']["tmp_name"], "./img/".$image);
  $nom= $_POST['nom'];
  $lien= $_POST['lien'];
- // Requête mysql pour insérer des données
  $sql = "INSERT INTO `courses`( `image`, `nom`,`lien`) 
         VALUES (:image, :nom, :lien)";
  $res = $conn->prepare($sql);
  $exec = $res->execute(array(":image"=>$image,":nom"=>$nom,":lien"=>$lien));
- // vérifier si la requête d'insertion a réussi
  if($exec){
    echo 'Données insérées';
  }else{
@@ -32,7 +36,7 @@
         <div class="col overflow-auto">
              <?php include 'navbar.php'; ?>
              <h1>ADD COURSE</h1>
-             <form method="POST" action="">
+             <form method="POST" action="" enctype="multipart/form-data">
                <fieldset> 
                 <div class="form-group">
                    <label for="nom">Entrez le numero de course</label>

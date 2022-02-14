@@ -7,8 +7,9 @@
                         <span class="adm text-dark">Admin Name</span>
                         <p class="text-info">Admin</p>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
-                        <li class="nav-item mb-2">
-                            <a href="Dashbord.php" class=" sheet nav-link align-middle px-2 text-dark bg-info px-sm-2 py-1">
+                        <li class="nav-item mb-2" >
+                            <div class="brain">
+                            <a href="Dashbord.php" class="sheet nav-link align-middle px-2 text-dark px-sm-2 py-1">
                                 <i class="fal fa-home-lg-alt "></i> <span class="ms-1 d-none d-sm-inline ">Home</span>
                             </a>
                         </li>
@@ -40,6 +41,4 @@
                         </li>
                     </ul>
                  </div>
-                </d$
-                iv>
             </div>

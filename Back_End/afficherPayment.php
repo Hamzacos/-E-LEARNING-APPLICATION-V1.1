@@ -2,10 +2,7 @@
    require_once('connection.php');
 
    $pdo_statement = $conn->prepare("SELECT * FROM `payment_details.` where id=" . $_GET["id"]);
-
-   //$query = $conn->prepare($sql);
-   $pdo_statement->execute();
-   
+   $pdo_statement->execute();   
    $view =  $pdo_statement->fetchAll();
 ?>
 <!DOCTYPE html>

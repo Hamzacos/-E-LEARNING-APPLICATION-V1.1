@@ -41,3 +41,7 @@ right: 15px;
     background:linear-gradient(110.42deg, #00C1FE 18.27%, #FAFFC1 91.84%);
     border-radius: 8px;
 }
+
+.brain :hover{
+    background-color: #00C1FE;
+}

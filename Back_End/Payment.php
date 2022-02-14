@@ -1,9 +1,9 @@
 <?php
 require_once('connection.php');
-$data = 'SELECT * FROM `payment_details.`';
+$data  = 'SELECT * FROM `payment_details.`';
 $query = $conn->prepare($data);
 $query->execute();
-$user = $query->fetchAll(PDO::FETCH_ASSOC);
+$user  = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
