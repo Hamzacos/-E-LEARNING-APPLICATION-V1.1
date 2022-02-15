@@ -4,7 +4,18 @@
                         <a class="navbar-brand text-black border-start border-3 border-info px-2 " href="#">E-Classe</a>
                          </div>
                         <img src= "img/user.jpg" alt="hugenerd" width="50" height="50" class="rounded-circle"><br>
-                        <span class="adm text-dark">Admin Name</span>
+                        
+                        <?php  
+                                session_start();  
+                                if(isset($_SESSION["username"]))  
+                                {  
+                                    echo '<span class="adm text-dark">'.$_SESSION["username"].'</span>'; 
+                                }  
+                                else  
+                                {  
+                                    header("location:index.php");  
+                                }  
+                         ?>  
                         <p class="text-info">Admin</p>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start " id="menu">
                         <li class="nav-item mb-2" >
@@ -36,7 +47,7 @@
                                 <i class="fal fa-sliders-v-square"></i></i> <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
                         </li>
                         <li  class="nav-item mb-10">
-                            <a href="index.php" class="nav-link px-0 align-middle text-dark">
+                            <a href="logout.php" class="nav-link px-0 align-middle text-dark">
                              <span class="ms-1 d-none d-sm-inline">Logout</span><i class="fas fa-sign-out-alt px-sm-2"></i> </a>
                         </li>
                     </ul>
