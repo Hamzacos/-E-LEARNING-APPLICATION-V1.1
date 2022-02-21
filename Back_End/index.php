@@ -6,6 +6,7 @@
     $check=$_POST['check']?? '';
     $name=$_COOKIE['username']?? '';
     $pass=$_COOKIE['password']?? '';
+    $_SESSION['created'] = time();
     
     if($check=='on'){
       setcookie ("username",$_POST["username"],time()+ 86400);
@@ -14,6 +15,7 @@
       setcookie("username","");
       setcookie("password","");
     }
+   
     if(isset($_POST["login"]))
     {
       if(empty($_POST["username"]) || empty($_POST["password"]))
