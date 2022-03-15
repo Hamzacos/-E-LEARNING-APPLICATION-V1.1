@@ -62,7 +62,7 @@ include 'header.php';
     <div class="container-fluid ">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 col-md-4">
-                <form class="bg-white p-3" method="post" action="">
+                <form class="bg-white p-3" method="post" action=""  name="myform" onsubmit="return validateform()">
                     <div class="m-4">
                     <a class="navbar-brand text-black border-start border-3 border-info px-2 mx-3 " href="#">E-Classe</a>
                      </div>
@@ -86,8 +86,9 @@ include 'header.php';
                     <input name="check" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Remember me</label>
                     </div>
-                    <input type="submit" name="login" class="btn btn-info text-white w-100" value="SIGN IN" />  
+                    <input type="submit" name="login" class="btn btn-info text-white w-100" value="SIGN IN" /> 
                     <p class="text-center mt-3">Forgot your password<a href="#" class="text-info">?Reset Password</a></p>
+                    <p class="text-center mt-3"> <a href="signup.php" class="text-info text-center mt-3">Inscrit-vous</a></p>
                   </form>
             </div>
         </div>

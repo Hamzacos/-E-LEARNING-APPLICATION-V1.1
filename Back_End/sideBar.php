@@ -6,7 +6,7 @@
                         <img src= "img/user.jpg" alt="hugenerd" width="50" height="50" class="rounded-circle"><br>
                         
                         <?php  
-                               
+                               session_start();
 
                                 if(isset($_SESSION["username"]))  
                                 {  
