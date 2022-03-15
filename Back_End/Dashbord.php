@@ -1,7 +1,7 @@
 <?php
-session_start();
-$time = time()- $_SESSION['created'];
-if($time >30)
+
+/*$time = time()- $_SESSION['created'];
+if($time >86400)
 {
   session_start();
   session_unset();
@@ -9,8 +9,8 @@ if($time >30)
   header("location: index.php");
   
 } 
-?> 
-<?php
+?>*/ 
+//<?php
  require_once 'connection.php';
 $result=$conn->query("SELECT COUNT(*) FROM courses");
 $result->execute();
