@@ -6,23 +6,24 @@ function validateform(){
     var dotposition    = x.lastIndexOf(".");  
     var firstPassword  = document.myform.password.value;
     var secondPassword = document.myform.password2.value;
-    
-    if(username == null || username == ""){
-        alert("Merci de verefier le champs du name");
+
+
+    if(username == ""){
+        document.getElementById("nom").setAttribute("style","display:bloc;color:red");  
         return false;
-    }else if(prenom == null || prenom == ""){
-        alert("Merci de verfier le champ du Prenom");
+    }else if(prenom == ""){
+        document.getElementById("prenom").setAttribute("style","display:block;color:red");
         return false;
     }else if(atposition < 1 || dotposition < atposition+2 || dotposition+2 >= x.length){
-        alert("Please enter a valid e-mail address ");  
+        document.getElementById("mail").setAttribute("style","display:block;color:red");  
         return false;  
     }else if(firstPassword.length < 8){
-        alert("password must be at least 8 chartere");
+        document.getElementById("password").setAttribute("style","display:block;color:red");
         return false;
     }else if(firstPassword == secondPassword){
         return true;
     }else if(!(firstPassword == secondPassword)){
-        alert("password must be same!");  
+        document.getElementById("password").setAttribute("style","display:block;color:red");
         return false;  
     }    
 }

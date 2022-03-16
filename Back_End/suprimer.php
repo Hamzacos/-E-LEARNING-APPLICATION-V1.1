@@ -12,3 +12,4 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
     header('Location: student.php');
 }
+?>

@@ -59,7 +59,7 @@ $title="login page";
 include 'header.php';
 ?>
 <body>
-    <div class="container-fluid ">
+    <div class="container-fluid gradient">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 col-md-4">
                 <form class="bg-white p-3" method="post" action=""  name="myform" onsubmit="return validateform()">

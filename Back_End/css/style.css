@@ -1,13 +1,30 @@
  *{
   font-family: 'Montserrat', sans-serif;
  }
- .container-fluid{
+ .container-fluid.gradient{
     background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
-    height: 100vh;
+    min-height: 100vh;
 
   }
+  #exampleModal {
+    min-width: 400px;
+  }
+  #bgdark {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+  }
+ 
   form{
-    transform: translateY(10%);
     border-radius: 20px;
   }
   .navbar-brand {
