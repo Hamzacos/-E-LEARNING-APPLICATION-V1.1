@@ -120,7 +120,7 @@ header("Location: student.php");
                   </div>
      </div> 
 
-     <!-- Modal ADD -->
+     <!--------------------------------------- Modal ADD----------------------------------------- -->
 
 <div class="modal" id="ADD">
   <div class="modal-dialog" role="document" id="exampleModal">
@@ -159,7 +159,8 @@ header("Location: student.php");
                  </div>
                  <div class="modal-footer">
                <button type="button" class="btn btn-secondary hideModel" data-dismiss="modal">Close</button>
-               <input type="submit" name="insert" class="btn btn-primary" value="Insérer">
+               <input type="submit" name="insert" class="btn btn-primary" value="Insérer" onclick="myFunction()">
+               <div id="ajouter">ajouté avec succes</div>
                  <input type="hidden" name="id" value="<?= isset($_GET['id']) ? $_GET["id"] : "" ?>">
                </div>
        </div>
@@ -168,43 +169,44 @@ header("Location: student.php");
                </fieldset>
              </form>
         </div>
-<!-- END Modal ADD -->
-<!-- ******************************************************************************** -->
-     <!-- Modal Update -->
+<!------------------------------------------- END Modal ADD ------------------------------------------------->
+
+
+
+     <!------------------------------------------ Modal Update ----------------------------------------------->
 
 <div class="model" id="bgdark" tabindex="-1">
   <div class="modal-dialog" role="document" id="exampleModal">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Update Students</h5>
-
       </div>
       <div class="modal-body">
       <form method="POST" action="">
                <fieldset> 
                 <div class="form-group">
-                   <label for="nom">Entrez votre nom</label>
+                   <label for="nom">Votre nom</label>
                    <input type="file" class="form-control"  name="img" value="<?= isset($studentData) ? $studentData[0]['img'] : ""; ?>" >
                  </div>   
                  <div class="form-group">
-                   <label for="nom">Entrez votre nom</label>
+                   <label for="nom">Votre nom</label>
                    <input type="text" class="form-control"  placeholder="Votre Nom" name="Name" value="<?= isset($studentData) ? $studentData[0]['Name'] : ""; ?>"  >
                  </div>
                  
                  <div class="form-group">
-                   <label for="email">Entrez votre mail</label>
+                   <label for="email">Votre mail</label>
                    <input type="email" class="form-control"  placeholder="user@email.com" name="Email" value="<?= isset($studentData) ? $studentData[0]['Email'] : ""; ?>"  >
                  </div>
                  <div class="form-group">
-                   <label for="num">Entrez votre phon</label>
+                   <label for="num"> Votre phone </label>
                    <input type="text" class="form-control"  placeholder="06XXXXXX" name="phone" value="<?= isset($studentData) ? $studentData[0]['phone'] : ""; ?>"  >
                  </div>
                  <div class="form-group">
-                   <label for="number">Entrez votre Enroll Number</label>
+                   <label for="number">Votre Enroll Number</label>
                    <input type="text" class="form-control"  placeholder="123XXXXXXXXXX" name="Enroll_Number" value="<?= isset($studentData) ? $studentData[0]['Enroll_Number'] : ""; ?>"  >
                  </div>
                  <div class="form-group">
-                   <label for="email">Entrez la Date d'admission</label>
+                   <label for="email">La Date d'admission</label>
                    <input type="date" class="form-control"   name="Date_of_admission"  value="<?= isset($studentData) ? $studentData[0]['Date_of_admission'] : ""; ?>" >
                  </div>
       <div class="modal-footer">
@@ -219,7 +221,7 @@ header("Location: student.php");
 </fieldset>
              </form>
       </div>
-<!-- END Modal Update -->
+<!---------------------- END Modal Update ------------------------------------>
 <script src="js/bootstrap.bundle.min.js" ></script>   
 <script src="js/model.js"></script>
 <script>

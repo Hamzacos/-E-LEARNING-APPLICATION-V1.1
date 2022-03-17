@@ -6,7 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 
-  document.querySelector(".hideModel").addEventListener("click", function() {
-    document.querySelector("#bgdark").style.display = "none"
+  document.querySelectorAll(".hideModel").forEach(btn => {
+    btn.addEventListener("click", function() {
+      document.querySelector("#bgdark").style.display = "none"
+    })
+
   })
-  
+
+  function myFunction() {
+    var x = document.getElementById("ajouter");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }

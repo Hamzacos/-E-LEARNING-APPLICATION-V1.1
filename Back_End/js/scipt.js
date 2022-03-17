@@ -2,19 +2,17 @@ function validateform(){
     var username       = document.myform.username.value;
     var prenom         = document.myform.prenom.value;
     var x              = document.myform.email.value;  
-    var atposition     = x.indexOf("@");  
-    var dotposition    = x.lastIndexOf(".");  
     var firstPassword  = document.myform.password.value;
     var secondPassword = document.myform.password2.value;
 
 
-    if(username == ""){
+    if(!(/^[a-z]{3,}$/gi.test(username))){
         document.getElementById("nom").setAttribute("style","display:bloc;color:red");  
         return false;
-    }else if(prenom == ""){
+    }else if(!(/^[a-z]{3,}$/gi.test(prenom))){
         document.getElementById("prenom").setAttribute("style","display:block;color:red");
         return false;
-    }else if(atposition < 1 || dotposition < atposition+2 || dotposition+2 >= x.length){
+    }else if(!(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/gi.test(x))){ 
         document.getElementById("mail").setAttribute("style","display:block;color:red");  
         return false;  
     }else if(firstPassword.length < 8){
